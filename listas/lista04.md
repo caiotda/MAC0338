@@ -7,6 +7,12 @@ Seja C(n) o número de execuções, no pior caso, da atribuição A[i+1] := A[i]
 1. O consumo de tempo do algoritmo é proporcional a C(n)? Por que?
 2. Quanto vale C(n) no pior caso? Justifique.
 
+
+
+1. Não. No melhor caso (vetor de entrada já está ordenado) a linha 5 não é  executada. Neste caso, a afirmação implicaria que o o consumo de tempo  do algoritmo, mesmo que no melhor caso, é proporcional a n(n-1)/2, o que é falso.
+
+2. No pior caso, a linha 5 é executada 1 + 2 + ... n-1 vezes, resultando em n(n-1)/2 vezes
+
 ***
 
 2)
@@ -25,7 +31,7 @@ Qual o consumo de tempo do algoritmo ORDENAÇÃO-POR-INSERÇÃO no melhor caso? 
 
 
 
-No melhor caso o vetor de entrada de tamanho n já está ordenado, então o insertion sort simplesmente  itera o vetor. Assim, assintoticamente, o tempo de execução é igual a n.
+No melhor caso o vetor de entrada de tamanho n já está ordenado, então o insertion sort simplesmente  itera o vetor. Assim, vale que o tempo do algoritmo está tanto em  Omega(n) quanto O(n) no melhor caso, logo, está em Theta(n).
 
 ***
 
