@@ -29,13 +29,11 @@ Está provado por indução que a expressão é divisível por 5 para todo natur
 
 ```
 devolve-quociente(n)
-1.	devolva devolve-quociente-aux(11^n - 6, 0)
+1.	devolva devolve-quociente-aux(11^n - 6)
 
-devolve-quociente-aux(n, resultado)
+devolve-quociente-aux(n)
 1. se n = 0
-2.	devolva resultado
-3. n := n - 5
-4. resultado := resultado + 1
-5. devolva devolve-quociente-aux(n, resultado)
+2.	devolva 0
+3. devolva devolve-quociente-aux(n) + 1
 ```
 
