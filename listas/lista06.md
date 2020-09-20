@@ -135,21 +135,35 @@ Vamos tomar como hipotese de indução que a desigualdade vale para T(teto(n/2))
 
 T(n) = piso(n/2) + teto(n/2) + 6n + 7
 
-T(n) >= 1 * piso (n/2) * log(piso(n/2)) + 1 * teto(n/2) * log( teto(n/2) ) + 6n + 7 
+T(n) >= 1 * piso (n/2) * lg(piso(n/2)) + 1 * teto(n/2) * lg( teto(n/2) ) + 6n + 7 
 
-,>= 1 * teto(n/2) * log( teto(n/2) ) + 6n + 7 
+,>= 1*lg(piso(n/2)) * [  piso(n/2) + teto(n/2) ] + 6n + 7  
 
-,>=1 *n/2 * log(n/2) + 6n + 7 
+,>= 1*lg(piso(n/2)) * piso(n) + 6n + 7  
 
-,>=1 *n/2 * log(2n/5) + 6n + 7
+,>= 1*lg(piso(n/2)) * (n-1) + 6n + 7 ; Como piso(n/2) >= n/4 para n>= 3, temos:
 
-= 2 *n/2 * log(n/5) + 6n + 7
+,>= 1*lg(n/4) * (n-1)+ 6n + 7  
 
-= n * [ log(n) - log(5) ] + 6n + 7 
+= (lg(n) - 2) * (n-1)+ 6n + 7  
 
-= n * log (n) - n log(5) + 6n + 7; n > 1, então vale que - n log(5) + 6n + 7 > 0, logo
+= n*lg(n) - lg(n) -2n + 2 + 6n + 7
 
-,>= n * log(n)
+= n*lg(n) - lg(n) + 4n + 9
 
-Como existe c tal que T(n) >= c * n log(n) vale para todo n > 1, então segue que T(n) é Omega(n log n)
+, >= n* lg(n)
 
+Assim, como existe c tal que T(n) >= c * n lg(n) para n >= 1, está provado que T(n) é Omega(n lg (n))
+
+Prova auxiliar [*] :
+
+ Vamos provar que piso(n/2) >= n/4. Como n é inteiro, temos dois casos: n par, ou n ímpar:
+ se n for par:
+
+ n/2 >= n/4; Verdadeiro para todo n > 0
+ se n for ímpar
+ piso(n/2) = (n-1)/2, logo
+
+ (n-1)/2 >= n/4
+
+ n-1 >= n/2; Verdadeiro para n>= 2
