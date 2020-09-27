@@ -72,7 +72,7 @@ karatsuba(u, v, n)
 4. p := piso(u/10^m)
 5. q := u * mod10^m
 6. r := piso(v/10^m)
-7. s := u * mod10^m
+7. s := v * mod10^m
 8. pr := karatsuba(p, r, m)
 9. qs := karatsuba (q, s, m)
 10.y := karatsuba(p+q, r+s, m+1)
