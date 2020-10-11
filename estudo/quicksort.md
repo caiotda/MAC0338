@@ -168,3 +168,65 @@ Nesse momento é interessante fazer a reflexão: se o quicksort é quadrático n
 1. O quicksort não cria memória extra. Imagine se temos que ordenar milhões de itens: para usarmos o mergesort, seria necessário alocar o dobro de memória que no quicksort
 2. O melhor caso do quicksort é mais rapido que o melhor caso do mergesort
 3. O pior caso do quicksort é raro: só ocorre se o vetor já está ordenado. Se usarmos uma rotina que aleatoriza a escolha do pivô, podemos evitar o pior caso (claro que ainda pode ocorrer, mas a probabilidade é tão baixa que vale o risco)
+
+***
+
+## Quicksort aleatoriezado
+
+* A aleatoriezação do quicksort vem como solução ao problema de existir uma possibilidade do quicksort ser quadratico: se o input checar ordenado, o quicksort é quadrático.
+
+Com a aleatoriezação, o quicksort vira o algoritmo de ordenação de escolha para inputs grandes. A única diferença para o quicksort usual é o particionamento:
+
+```
+particiona-aleatoriezado(A, p, q):
+1. r := random(p, q)
+2. troque A[r] com A[q]
+3. particiona(A, p, q)
+```
+
+Onde a rotina random retorna um número aleatório em [p, q], igualmente distribuído. O desempenho e a implementação do quicksort aleatoriezado é identica - com a diferença que chamamos o particiona-aleatoriezado ao invés do particiona-. Resta, então, analisarmos o desempenho do particiona aleatoriezado.
+
+
+
+Para analisarmos o particiona random, basta entendermos quantas vezes a comparação da linha 4 do particiona é executada quando os pivôs são aleatorios. Tome 2 indices quaisqueres do vetor: i e j. Vamos definir a Variavel indicatora $X_{ij} = I\{i \ foi \ comparado\ com \ j \}$. O número de execuções da linha 4 é dado por:
+$$
+\mathbb{E}[X] = \mathbb{E}[\sum_{i=1}^{n-1}\sum_{j=i}^{n}X_{ij}]
+\\
+ \mathbb{E}[X] =\sum_{i=1}^{n-1}\sum_{j=i}^{n} \mathbb{E}[X_{ij}]
+ \\
+ \therefore
+ \\
+\mathbb{E}[X] =\sum_{i=1}^{n-1}\sum_{j=i}^{n} \mathbb{P}[X_{ij}]
+$$
+Note que estamos iterando i e j sobre n, e não p e q. Isso é feito porque estamos analisando o número de execuções da linha 4 do particiona para toda a execução do quicksort, e não apenas uma execução isolada do particiona. Ou seja, o número esperado de vezes que a linha 4 é executada é o número esperado de comparações entre A[i] com A[j] para toda comparação possível de i e j. 
+
+
+
+Pela natureza do particiona, note que essa comparação só vai acontecer quando i for o pivô, ou j for o pivô. O vetor foi embaralhado aleatoriamente então todo elemento em {i, i + 1, i + 2, ..., j-1, j } é igualmente provável de ser o pivô. Assim, de todos os j - i + 1 elementos no intervalo, só 1 pode ser o pivô. Como cada permutação do vetor é independente uma da outra, podemos tratar cada evento como disjunto (um evento/ uma permutação não influencia outros).Assim:
+$$
+\mathbb{P}(X_{ij}) = P(i\ é \ pivo) \or P(j \ é \ o \ pivo)
+\\
+\mathbb{P}(X_{ij}) = \frac{1}{j-i+1} + \frac{1}{j-i+1}
+\\
+\therefore
+\\
+P(X_{ij}) = \frac{2}{j-i+1}
+$$
+Voltando ao cálculo da esperança:
+$$
+\mathbb{E}[X] =\sum_{i=1}^{n-1}\sum_{j=i}^{n} \mathbb{P}[X_{ij}]
+\\
+= \sum_{i=1}^{n-1}\sum_{j=i}^{n} \frac{2}{j-i+1}
+\\
+tome \ k = j - i
+\\
+\sum_{i=1}^{n-1}\sum_{k=i}^{n} \frac{2}{k-1}
+\\ < \sum_{i=1}^{n-1}\sum_{k=i}^{n} \frac{2}{k}
+$$
+Note que temos uma soma harmonica ai. Podemos simplesmente aplicar a mesma desigualdade que usamos quando analisamos o quicksort no melhor caso e obter:
+$$
+\mathbb{E}(X) = \sum_{i=1}^{n-1}Olg(n)
+\\
+\mathbb{E}(X) = O(nlgn)
+$$
+Como o melhor caso do quicksort vale para o quicksort aleatoriezado, então vale que o quicksort aleatoriezado é $\Theta(nlgn)$
