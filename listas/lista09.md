@@ -66,4 +66,4 @@ permutações | estado após primeiro divide | expressão
 
 
 
-Pela previsão teórica, o Quicksort é Theta n^2 no pior caso e Theta n log n no melhor caso. O previsto seria, para cada vetor de tamanho n, o seu número de comparações X estar entre n^2 e  n log n.
+Pela previsão teórica, o Quicksort tem um desempenho médio de Theta n log n. Isto é, espera-se que, se, por exemplo, dobrarmos o tamanho de um vetor, o seu número de comparações aumenta  um pouco mais do que duas vezes.  No entanto, nota-se que se dobrarmos o tamanho do vetor (por exemplo, de n = 2 para n = 4), o número de comparações pode aumentar em até 5 vezes. Isso provavelmente se deve às constantes escondidas na notação assintótica Theta, que naturalmente é mais fiel aos resultados experimentais para n assintoticamente grandes.
