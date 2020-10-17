@@ -24,11 +24,11 @@ Em termos gerais, utilizamos a notação $\Omicron$ para determinar que uma fun�
 $$
 \exists c, n_0 \in \mathbb{R}, c > 0,  n_0 > n, \forall n : f(n) \leq c.g(n) \implies f(n) \in \Omicron (g(n))
 $$
-Em português: se estamos analisando nossas funções assintoticamente e existe um positivo c tal que vaçe f(n) <= c g(n), então f é O(g(n)) 
+Em português: se estamos analisando nossas funções assintoticamente e existe um positivo c tal que vale f(n) <= c g(n), então f é O(g(n)) 
 
 
 
-Graficamente, se f é big o g, então toda função na ordem $\Omicron$ g é limitado **superiormente** por g;
+Graficamente, se f é $\Omicron(g)$, então toda função na ordem $\Omicron$ g é limitado **superiormente** por g;
 
 ### Notação
 
@@ -45,7 +45,7 @@ Se a ordem $\Omicron$ é util para dizer quando uma função f, em analise assin
 
 A definição é muito parecida com a ordem $\Omicron$, só mudamos a comparação:
 $$
-\exists c, n_0 \in \mathbb{R}, c > 0,  n_0 > n, \forall n : f(n) \geq c.g(n) \implies f(n) =\Omega(n))
+\exists c, n_0 \in \mathbb{R}, c > 0,  n_0 > n, \forall n : f(n) \geq c.g(n) \implies f(n) =\Omega(g(n))
 $$
 Ou seja, para um c positivo e n suficientemente frande, se $f(n) \geq cg(n)$, então $f(n) = \Omega g(n)$. De novo, tomando f e g assintoticamente não negativos.
 
@@ -53,9 +53,9 @@ Graficamente, se f é omega g, então toda função na ordegm omega g é limitad
 
 ## Ordem $\Theta$
 
-Além de termos conceitos que abrangem as ideias de que uma função é menor do que outra ou maior, também temos o conceito de $Ordem \Theta$, que, em termos informais, afimra que **f = g** assintoticamente. A definição:
+Além de termos conceitos que abrangem as ideias de que uma função é menor do que outra ou maior, também temos o conceito de ordem $\Theta$, que, em termos informais, afirma que **f = g** assintoticamente. A definição:
 $$
-f(n) = \Theta(g(n)) \iff f(n) = \Omicron g(n) \and f(n) = \Omega(g(n))
+f(n) = \Theta(g(n)) \iff f(n) = \Omicron (g(n)) \and f(n) = \Omega(g(n))
 $$
 Isso quer dizer que existem positivos c e d tal que:
 $$

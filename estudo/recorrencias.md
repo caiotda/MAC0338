@@ -14,7 +14,7 @@ Para tanto,  vamos utilizar o artifício das **recorrências**, que nada mais s�
 $$
 f(n) = f(n-1) + 3n +2
 $$
-Note a similaridade com um algoritmo recursivo. Tome o algoritmo recursivo de calcular uma recursão: é razoável afirmar que o tempo de execução para resolver uma instância de tamanho n é o tempo para resolver uma instância de tamanho n + n (seria o tamanho da multiplicação resultante).
+Note a similaridade com um algoritmo recursivo. Tome o algoritmo recursivo de calcular uma soma de um vetor: é razoável afirmar que o tempo de execução para resolver uma instância de tamanho n é o tempo para resolver uma instância de tamanho n-1.
 
 
 

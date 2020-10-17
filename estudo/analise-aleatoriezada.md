@@ -4,13 +4,13 @@
 
 Objetivo: estudar o caso **médio** de um algoritmo.
 
-Até agora, nos preocupamos com o pior e melhor caso de um algoritmo: mas como podemos determinar quanto tempo um algoritmo demora em média? Até agora estavamos supondo que caso médio = pior caso, o que, em muitos algoritmo, é verdade. Mas agora vamos aprender a mostrar essa equivalência e conseguir mostrar o caso médio para qualquer algoritmo.
+Até agora, nos preocupamos com o pior e melhor caso de um algoritmo: mas como podemos determinar quanto tempo um algoritmo demora em média? Até agora estavamos supondo que caso médio = pior caso, o que, em muitos algoritmo, é verdade. Mas agora vamos aprender a mostrar o caso médio para qualquer algoritmo.
 
 
 
 ### Estudo de caso: o problema da contratação
 
-Suponha que você é o chefe de uma empresa e quer contratar um assistente. Para tanto, você preparar n candidatos para serem entrevistados ao longo de n semanas (ou seja, 1 entrevista por semana). Além disso, você é um chefe ansioso: sempre que você encontrar um assistente melhor que o atual, você contrata o candidato (naturalmente, o primeiro candidato sempre recebe o emprego porque inicialmente você não tem assistente). Ao fim das n semanas, **quantas contratações você fez?** Se o primeiro candidato for o melhor de todos, então você faz só uma contratação. Se os candidatos estiverem ordenados em ordem de competência, você fará n contratações. **Mas quantas contratações são feitas, na média?**
+Suponha que você é o chefe de uma empresa e quer contratar um assistente. Para tanto, você prepara n candidatos para serem entrevistados ao longo de n semanas (ou seja, 1 entrevista por semana). Além disso, você é um chefe ansioso: sempre que você encontrar um assistente melhor que o atual, você contrata o candidato (naturalmente, o primeiro candidato sempre recebe o emprego porque inicialmente você não tem assistente). Ao fim das n semanas, **quantas contratações você fez?** Se o primeiro candidato for o melhor de todos, então você faz só uma contratação. Se os candidatos estiverem ordenados em ordem de competência, você fará n contratações. **Mas quantas contratações são feitas, na média?**
 
 Suponha que registramos os n candidatos num vetor tal que A[i] = competência do iésimo candidato. Assim, podemos algoritmizar essa busca como:
 
@@ -19,7 +19,7 @@ max(A, n)
 1. max := 0
 2. para i := 1 até n
 3. 	 se A[i] > max
-4.	 max := A[i] //contratação
+4.	     max := A[i] //contratação
 5. devolva max
 ```
 
@@ -27,7 +27,7 @@ Quantas vezes a linha 4 é chamada?  Note que esse número independe dos valores
 
 ### Resolvendo com probabilidades
 
-Para resolver com probabilidades, vamos supor que todas as permutações de A são **independentes e igualmente distribuídas**: ou seja, a ocorrência de uma permutaçõa não impacta a probabilidade de outras permutações ocorrerem; além disso, todas as permutações tem a mesma chance de ocorrer.
+Para resolver com probabilidades, vamos supor que todas as permutações de A são **independentes e igualmente distribuídas**: ou seja, a ocorrência de uma permutação não impacta a probabilidade de outras permutações ocorrerem; além disso, todas as permutações tem a mesma chance de ocorrer.
 
 Quando falamos do número **esperado** de alguma coisa acontecer, normalmente falamos da **esperança**. Assim, vamos calcular a esperança da **variavel aleatoria** (variavel cujo resultado depende de fatores aleatórios) `x`, que dá a quantidade de vezes que a linha 4 é executada:
 $$

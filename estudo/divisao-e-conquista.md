@@ -50,7 +50,7 @@ MERGESORT(A, p, r):
 5.        INTERCALA(A, p, q, r)        
 ```
 
-Note a divisão e conquista: quebramos o vetor `A[p...r]` no meio, então ordenamos recursivamente cada metad e cada metade, por sua vez, quebra suas metadas e as ordena recursivamente, dai em diante até que p == r, ou seja, o elemento tem 1 elemento apenas e está trivialmente ordenado.
+Note a divisão e conquista: quebramos o vetor `A[p...r]` no meio, então ordenamos recursivamente cada metade e cada metade, por sua vez, quebra suas metades e as ordena recursivamente, dai em diante até que p == r, ou seja, o elemento tem 1 elemento apenas e está trivialmente ordenado.
 
 Depois de quebrarmos nosso vetor em pedacinhos de 1 unidade e ordenados, chamaos a função `INTERCALA` que faz o trabalho sujo de tomar dois vetores ordenados `A[p...q]` e `A[q+1...r]` e retorna um terceiro vetor `A[p...r]` que contém todos elementos dos dois vetores e está ordenado.
 

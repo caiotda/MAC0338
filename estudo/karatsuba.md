@@ -4,7 +4,7 @@
 
 ### Introdução
 
-Problema: Multiplicar dois números inteiros de, no máximo, n dígitos. O algoritmo intuitivo é quadráticco (aquele que a gente aprendeu na escola).
+Problema: Multiplicar dois números inteiros de, no máximo, n dígitos. O algoritmo intuitivo é quadrático (aquele que a gente aprendeu na escola).
 
 Mas como os números que multiplicamos no dia a dia tem, normalmente, uns 2,3, ou 4 digitos, o algoritmo acaba sendo bem rápido se implementarmos no computador (seriam umas 16 multiplicações, onde cada multiplicação demora um tempo minúsculo). No entanto, quando lidamos com problemas combinatórios de números grandes, como em criptografia, faz sentido começar a pensar em algoritmos mais eficientes para multiplicação de números inteiros. Vamos estudar o algoritmo de karatsuba, que é $\Theta(n^{lg(3)})$. O que é ligeiramente melhor que quadrático.
 
@@ -62,7 +62,7 @@ $$
 
 ### O algoritmo
 
-Com isso tudo em mente, podemos montar o algoritmo de karatsub: um algoritmo que recebe dois números, seus números de digitos e recursivamente calcula o produto. Ou seja: 
+Com isso tudo em mente, podemos montar o algoritmo de karatsuba: um algoritmo que recebe dois números, seus números de digitos e recursivamente calcula o produto. Ou seja: 
 
 ```python
 karatsuba(u, v, n)
@@ -76,7 +76,7 @@ karatsuba(u, v, n)
 8. pr := karatsuba(p, r, m)
 9. qs := karatsuba (q, s, m)
 10.y := karatsuba(p+q, r+s, m+1)
-11. uv := pr * 10^2m + 10^m * (y - pr - qs) + qs
+11.uv := pr * 10^2m + 10^m * (y - pr - qs) + qs
 12.devolva uv
 ```
 
@@ -86,14 +86,14 @@ Na linha 4 e 6 estou pegando os m digitos mais significativos. Nas linhas 5 e 7,
 
 O caso base da recursão é 3 porque queremos que os subproblemas sejam menores que os problemas originais. Assim, o subproblema da linha 10 só vale se n >3, já que
 $$
-\lceil\frac{n}{2} +1\rceil < n \iff n> 3
+\lceil\frac{n}{2}\rceil+1 < n \iff n> 3
 $$
 
 ### Análise do algoritmo de karatsuba
 
 
 
-É razoável afirmar que o algoritmo não depende dos números envolvidos, e sim da quantidade de algarismos (já que supomos que toda multiplicaçõa suficientemente pequena é computacionalmente identica). Uma recorrência razoável é 
+É razoável afirmar que o algoritmo não depende dos números envolvidos, e sim da quantidade de algarismos (já que supomos que toda multiplicação suficientemente pequena é computacionalmente identica). Uma recorrência razoável é 
 $$
 T(n) = 2*T(\lceil\frac{n}{2} \rceil) + T(\lceil\frac{n}{2} \rceil + 1) + n
 $$
@@ -121,7 +121,7 @@ S(n) = \frac{3^in}{2^i} + ... \frac{3n}{2} + n
 \\
 = n * \frac{\frac{3}{2}^{i+1} -1 }{\frac{3^{}}{2^{}} - 1}
 \\
-= 2n*[\frac{3}{2}^{i+1} - 1]; n = 2^i
+= 2n*[\frac{3}{2}^{i+1} - 1]; \ com \ n = 2^i
 \\
 = 2^{i+1}*[(\frac{3}{2})^{i+1} - 1]
 \\
@@ -137,4 +137,7 @@ No fim ali eu usei a propriedade do log:
 $$
 a^{log_b(c)} = c^{log_b(a)}
 $$
-Assim, fica facil notar que o algoritmo é $\Theta(n^{lg(3)})$. Note que assintoticamente, $n^{lg3} < n^2$, ent"ao karatsuba realmente é mais rapido assintoticamente. No entando, o que a notação theta esconde é o valor da constante c e n_0 a partir dos quais isso é verdade, e são valores bem altos. Assim, para multiplicações cotidianas, o algoritmo ensino médio é mais rápido.
+Assim, fica facil notar que o algoritmo é $\Theta(n^{lg(3)})$. Note que assintoticamente, $n^{lg3} < n^2$, então o  algoritmo de Karatsuba realmente é mais rapido assintoticamente. No entando, o que a notação theta esconde é o valor da constante c e n_0 a partir dos quais isso é verdade, e são valores bem altos. Assim, para multiplicações cotidianas, o algoritmo ensino médio é mais rápido.
+
+
+

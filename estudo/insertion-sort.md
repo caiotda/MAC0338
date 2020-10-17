@@ -46,12 +46,12 @@ Para mostrar que um invariante vale, devemos mostrar 3 propriedades dele:
 O invariante para a ordenação por inserção é que **a cada iteração, o subvetor A[1...j-1] está ordenado**. Vamos mostrar essas 3 propriedades para demonstrar que o invariante está correto:
 
 1. Trivial. Na primeira iteração (j = 2), A[1...j-1] = A[1]; assim, está trivialmente ordenado
-2. Numa iteração j-1 qualquer, vale que A[1...j-1] está ordenado. A idéia do insertion sort é inserir A[j] na posição correta dentro de A[1...j-1]. O algoritmo o faz movendo cada elemento em A[1....j-1] maior que A[j] para a posição sequencial até um ponto que o elemento é A[j] é inserido (suponha que seja inserido numa posição i tal que 1 <= i < j. Nesse momento, vale que A[1....i-1] está ordenado, A[i+1...j] está ordenado. Como A[j] é trivialmente ordenado, o vetor resultante A[1...i....j] está ordenado.
+2. Numa iteração j-1 qualquer, vale que A[1...j-1] está ordenado. A idéia do insertion sort é inserir A[j] na posição correta dentro de A[1...j-1]. O algoritmo o faz movendo cada elemento em A[1....j-1] maior que A[j] para a posição sequencial até um ponto que o elemento é A[j] é inserido (suponha que seja inserido numa posição i tal que 1 <= i < j. Nesse momento, vale que A[1....i-1] está ordenado, A[i+1...j] está ordenado. Como A[i] é trivialmente ordenado, o vetor resultante A[1...i....j] está ordenado.
 3. Ao fim do loop, vale que j = n + 1. Pelo invariante, vale que o subarray A[1...j-1] está ordenado. Mas A[1...j-1] = A[1...n], logo, o vetor está ordenado. Concluímos, portanto, que o algoritmo está correto.
 
 ### Analisando o algoritmo
 
-Para fazermos a anlálise do nosso algoritmo, vamos assumir que a iésima linha do nosso algoritmo toma um tempo $c_i$ constante. Como vamos analisar tudo em notação assintótica, o valor dessa constante é desprezível. Podemos, então, assumir que cada insturção toma um tempo arbitrário 1. Abaixo, vamos mostrar o algoritmo junto de quantas vezes cada linha eé executada:
+Para fazermos a anlálise do nosso algoritmo, vamos assumir que a iésima linha do nosso algoritmo toma um tempo $c_i$ constante. Como vamos analisar tudo em notação assintótica, o valor dessa constante é desprezível. Podemos, então, assumir que cada instrução toma um tempo arbitrário 1. Abaixo, vamos mostrar o algoritmo junto de quantas vezes cada linha é executada:
 
 
 
