@@ -28,6 +28,12 @@ Por fim, podemos definir o problema da **subcoleção disjunta maxima (SCD máxi
 
 Esse problema admite um algoritmo guloso como solução. Esse algortimo toma a seguinte **escolha gulosa**: sempre escolha um intervalo de término mínimo e remova todos intervalos que não são posteriores ao intervalo escolhido.
 
+
+
+Convém-se, então, ordenar nossos intervalos pelo término de cada um. Ficaria mais ou menos assim: 
+
+![](/home/caio/Documentos/BCC/atual/MAC0338/estudo/scdmax.png)
+
 Com isso é óbvio que o algoritmo produz uma SCD (isso vêm como consequencia natural de só escolhermos intervalos posteriores ao intervalo com término mínimo). O que nos resta provar é se essa SCD é máxima.
 
 Para provar esse fato, precisamos provar duas propriedades gulosas do algoritmo:
