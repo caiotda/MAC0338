@@ -1,0 +1,1763 @@
+/* ANALISEdeALGS/analise_de_algoritmos/aulas/style-aulas.css */
+/* 1em=16px 1px=0.0625em */
+BODY {
+  margin-left: 8%; /*was 8%*/
+  margin-right: 8%; /*was 8%*/
+  padding: 0; /*to appease Microsoft IE*/
+  background-color: #ffffff;
+/*color: #552800; Knuth brown*/
+/*color: #552200; brown*/
+/*color: #401000; brown*/
+  color: #000030;
+  text-align: left;
+  max-width: 1000px; /*new*/
+  word-spacing: 1.3px; /*1.3px 1.5px=0.08em 0.03em 0.25em*/
+  letter-spacing: 0.4px; /*0.4px 0.5px*/
+  font-size: 1.2em; /*was 1.15 1.2*/
+  font-family: "Book Antiqua", "Century Schoolbook L", "Garamond", "DejaVu Serif", "Latin Modern Math", serif; 
+}
+/*
+  "Georgia" is bad because "0" is like "o"
+  "Bookman Old Style" not too good: overlaps some letters, 
+      like "<var>g</var>" e "+"
+  "Comic Sans" is OK
+*/
+
+p {
+  margin-top: 1.0em; /*I guess default is 1.0em*/
+  margin-bottom: 1.0em; /*I guess default is 1.0em*/
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+.small55 { 
+  font-size: 0.55em;
+}
+.small60 { 
+  font-size: 0.60em;
+}
+.small65 { 
+  font-size: 0.65em;
+}
+.small70 { 
+  font-size: 0.70em;
+}
+.small75 { 
+  font-size: 0.75em;
+}
+.small80 { 
+  font-size: 0.80em;
+}
+.small83 { 
+  font-size: 0.83em;
+}
+.small87 { 
+  font-size: 0.87em;
+}
+.small90 { 
+  font-size: 0.90em;
+}
+.small95 { 
+  font-size: 0.95em;
+}
+small {
+   font-size: 0.87em;
+}
+big {
+  font-size: 1.2em;
+}
+big.bigx {
+   font-size: 1.4em;
+}
+span.math {
+  word-spacing: 3.0px; /*normal is 1.3px*/
+  letter-spacing: 3.0px; /*normal is 0.4px*/
+}
+tt {
+  font-family: "Ubuntu Mono", "Courier 10 Pitch", monospace, monospace; 
+  font-size: 0.90rem;
+  font-size: 0.95rem;
+}
+tt.ws {  
+  word-spacing: -0.3em;
+}
+pre {
+  font-family: Consolas; /*no!*/
+  font-family: "BPmono"; /*no*/ 
+  font-family: "Anonymous"; /*no*/
+  font-family: "Anonymous Pro"; /*no*/
+  font-family: "Bitstream Vera Sans"; /*spaces not OK*/ 
+  font-family: "Droid Sans Mono"; /*no*/
+  font-family: "Fira Mono"; /*no*/
+  font-family: "Fira Code"; /*no*/
+  font-family: "GNU Free Font"; /*no*/
+  font-family: "Inconsolata"; /*no*/
+  font-family: "Liberation Mono";
+  font-family: "Noto Mono";
+  font-family: "TeX Gyre Cursor";
+  font-family: "Courier New", Courier;  
+  font-family: "Ubuntu Mono", "Courier 10 Pitch", "Noto Mono", monospace, monospace; 
+  word-spacing: 0.0em; /*essential*/
+  font-size: 0.99em;
+}
+pre.bold {
+  font-weight: bold;
+}
+pre.graphics {
+  word-spacing: 0.0em;
+  white-space: pre;
+  font-family: normal;
+  font-family: "Ubuntu Mono";/*good*/
+  font-family: "Latin Modern Mono Prop";/*good*/
+  font-family: "Latin Modern Mono";/*good*/
+  font-family: "Courier 10 Pitch", monospace, monospace;
+  font-size: 1.0rem;
+  font-size: 0.95rem;
+}
+p.graphics { /*experimental*/
+  white-space: pre-wrap;
+  white-space: pre;/* will not wrap */
+/*font-family: "Courier";*/
+/*font-family: "mono"; font-size: 0.70em;*/
+  font-size: 0.85em;
+  line-height: 0.9em;
+  margin: 0em 0em 0em 2.5em;
+}
+pre.small {
+  word-spacing: 0.0em;
+  font-size: 0.87em;
+}
+pre.smalltree {
+  word-spacing: 0.0em;
+  line-height: 1.15em;
+  font-size: 0.95em;
+}
+sub {
+  font-size: 0.87em; /*like small*/
+  vertical-align: -0.3em; /*default is ca.-0.4em*/
+}
+sub.smaller {
+  font-size: 0.80em; /*74% is good on Firefox for Linux*/
+  vertical-align: -0.35em;
+}
+sub.np {
+  font-size: 0.80em;
+  vertical-align: -0.30em;
+}
+sub.log { /*for log_{}*/
+  font-size: 0.74em; /*0.74em*/
+  vertical-align: -0.40em;
+}
+sub.lower {
+  font-size: 0.87em; /*like small*/
+  vertical-align: -0.5em;
+}
+sub.higher {
+  font-size: 0.87em; /*like small*/
+  vertical-align: -0.25em;
+}
+sup {
+  font-size: 0.83em;
+  vertical-align: 0.42em;
+}
+sup.smaller {
+  font-size: 0.78em;
+  vertical-align: 0.45em;
+}
+sup.np {
+  font-size: 0.73em;
+  vertical-align: 0.5em;
+}
+sup.higher {
+  font-size: 0.83em;
+  vertical-align: 0.9em;
+}
+sup.smallerhigher {
+  font-size: 0.78em;
+  vertical-align: 0.9em;
+}
+sup.lower {
+  vertical-align: 0.3em;
+}
+sup.trans { /*graph transpose*/
+  font-size: 0.70em;
+  vertical-align: 0.40em; /*0.35em*/
+}
+dfn {
+  font-style: italic; 
+/*text-decoration: underline;*/ /*too much!*/
+/*font-weight: bold;*/
+/*background: #ffffb8; yellow*/
+  background-color: #ffffc8; /*hltcode is ffffd4*/
+  padding-left: 1px;
+  padding-right: 1px;
+}
+dfn.noitalic { 
+  font-style: normal;
+  background-color: #ffffd4;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+var { 
+  white-space: nowrap;
+}
+var.bar {
+  text-decoration: overline;
+}
+var.b {
+  font-style: normal;
+  font-weight: bold;
+  color: #505070;
+}
+var.bi { /*bold italic*/
+  font-weight: bold;
+  font-style: normal;
+}
+var.const {
+/*font-family: normal;*/
+  font-style: normal;
+}
+span.BCP { /* Branco-Cinza-Preto */
+/*font-variant: small-caps;*/
+/*text-transform: uppercase;*/
+/*font-family: monospace;*/
+/*font-size: 90%;*/ 
+}
+
+/********* menu *******************/
+p.menu {
+  font-size: 75%;
+/*font-weight: bold;*/
+  color: #000060; 
+  text-align: right; 
+  padding-bottom: 0.25em;
+  border-bottom: 3px solid #000060;
+  margin-bottom: 6em;
+  white-space: nowrap;
+}
+.menu a:link { 
+  text-decoration: none; 
+  color: #000060;
+} 
+.menu a:visited { 
+  text-decoration: none; 
+  color: #000060;
+} 
+.menu a:hover { /*must come after link and visited*/
+  text-decoration: underline; 
+  color: red;
+} 
+.menu a:active { /*must come after hover*/
+  text-decoration: underline; 
+  color: red; 
+} 
+
+/***** ordinary links *****/
+a:link {
+/*color: #d05010; when text color is brown*/
+  color: #0000ff; /*blue*/
+  text-decoration: underline;
+  text-decoration: none;
+} 
+a:visited {
+  color: #0000f4;
+  text-decoration: none;
+}
+a:hover { /* Must come after :link and :visited */
+  color: red;
+/*color: #FF9933;*/ /*Kalid Azad color*/
+  text-decoration: underline;
+}
+a:active { /*must come after hover*/
+  color: red;
+/*color: #FF3300;*/ /*Kalid Azad color*/
+  text-decoration: underline;
+} 
+
+/**** acronym ****/
+acronym {
+  color: #0000e0; /*same as a:link*/
+/*text-decoration: underline;*/
+}
+acronym:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+p.epigraph {
+  margin-top: 1.5em;
+  margin-bottom: 0.0em;
+  margin-left: 20%;
+  text-align: right;
+  font-size: 0.83em;
+}
+p.epigraph2ndparagraph {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 20%;
+  text-align: right;
+  font-size: 0.83em;
+}
+p.epigraphsignature {
+  margin-top: 0.3em;
+  margin-bottom: 1.0em;
+  text-align: right;
+  font-size: 0.83em;
+}
+
+/*** titles ***/
+h1 {
+  margin-top: 3em;
+  margin-bottom: 1.5em;
+  color: #000060; 
+  text-align: left;
+}
+h2 {
+  margin-top: 2em;
+/*color: #ff6633;*/ /*orange*/
+/*color: #ff8040;*/ /*pale orange*/
+/*color: #c04010;*/ /*brown-orange*/ 
+  color: #b04010;  /*dark brown-orange*/
+/*background: #ffa060; padding-left: 0.5em; color: white; */
+}
+h3 {
+ margin-top: 2em;
+ margin-bottom: 0em; /*default*/
+ /*font-family: sans-serif, arial, helvetica;*/
+ /*color: #000080;*/
+ /*color: #ff8040;*/ /*pale orange*/
+ /*color: #d05010;*/ /*brown-orange*/
+ /*color: #c04010;*/ /*brown-orange*/
+   color: #b04010;  /*dark brown-orange*/
+}
+h3.pr { /*perguntas e respostas*/
+  margin-top: 2em;
+/*color: #c04010;*/ /*brown-orange*/
+  color: #b04010;   /*dark brown-orange*/
+}
+h3.inline {
+  display: inline;
+  margin-top: 2em; /*no effect*/
+  padding-top: 2em; /*no effect*/
+/*color: #c04010;*/ /*brown-orange*/
+  color: #b04010;   /*dark brown-orange*/
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+h4 {
+  color: #b04010;  /*dark brown-orange*/
+}
+p.inlineH3 {
+  margin-top: 2em;
+}
+span.inlineH3 {
+  color: #b04010; /*dark brown-orange*/
+  font-size: 1.10em;
+  font-weight: bold;
+}
+
+/*** exr ***/
+div.exr {
+  margin-top: 4.0em;
+  margin-bottom: 4.0em;
+/*color: #005020; green*/
+  color: #8080a0; /*gray-blue*/
+  font-size: 1.05rem; /*yes! rem*/
+  font-size: 0.91em;
+}
+div.exr h2 {
+/*color: #008040; green*/
+  color: #a0a0b0; /*gray-blue*/
+}
+div.exr p {
+  margin-top: 0.3em;
+}
+div.exr p.display {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+span.exrtitle {
+  font-style: italic;
+}
+div.exr a:link {
+  color: #7070d8; /*dark-gray-blue*/
+  color: #5050ff;
+} 
+div.exr a:visited {
+  color: #7070b8;
+  color: #5050ff;
+} 
+div.exr a:hover { /* Must come after :link and :visited */
+  color: red;
+}
+div.exr a:active { /*must come after hover*/
+  color: red;
+} 
+div.exr li {
+  margin-top: 0.8em;
+}
+div.exr li ul {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+div.exr li ol {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+div.exr li li {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+/**** hide ****/
+.hide { 
+/*color: #00d000;*/
+  color: #202020;
+  background-color: #d0ffd0;
+}
+/*hide; just for lecture
+.hh { 
+  display: none;
+}
+*/
+.gray { /*visible comments*/
+/*color: #c0a080; when text color is brown*/
+  color: #8080c0;
+  color: #a0a0b0;
+}
+span.gray a:link {
+  color: #7070d8; /*dark-gray-blue*/
+} 
+span.gray a:visited {
+  color: #7070b8;
+} 
+span.gray a:hover { /* Must come after :link and :visited */
+  color: red;
+}
+span.gray a:active { /*must come after hover*/
+  color: red;
+} 
+
+/**** problem display ****/
+p.hlt {
+  background: #ffffd4; /*yellow like hltcode*/
+}
+p.problemdisplay {
+  margin: 1.4em 0.5em 1.4em 2em;
+/*width: 90%;*/
+  padding: 0.3em 0.5em 0.3em 0.5em;
+/*vertical-align: middle;*/
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.theorem {
+  margin-left: 2em;
+  margin-right: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+/*width: 90%;*/
+  vertical-align: middle;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+
+p.indent {
+  margin: 1.1em 0em 1.1em 2.5em;
+}
+p.indent-tight {
+  margin: -0.4em 0em -0.3em 2.5em;
+}
+
+div.indent {
+  margin-left: 4em;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+
+/**** center ****/
+p.lr-margin {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+p.display {
+  margin-top: 1.0em;
+  margin-bottom: 1.0em;
+  text-align: center;
+/*white-space: nowrap;*/
+}
+div.center {
+  text-align: center;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.left {
+  margin-left: 2.5em;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.figure-r {
+  float: right;
+  display: block; /*????????????????????*/
+  text-align: right;
+  margin-left: 1.0em;
+  margin-right: -0.5em;
+  border: 0px solid blue; /*scaffold dashed dotted*/
+}
+div.figure-l {
+  float: left;
+  display: block; /*????????????????????*/
+  text-align: left;
+  margin-left: -0.5em;
+  margin-right: 1em;
+  border: 0px solid blue; /*scaffold dashed dotted*/
+}
+div.figure-c {
+  text-align: center;
+  margin-left: 0em;
+  margin-right: 0em;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+img.noborder {
+/*vertical-align: baseline;*/
+/*vertical-align: bottom;*/
+/*vertical-align: middle;*/
+  vertical-align: top;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+img.h40 {
+  height: 2.3em;
+}
+img.h45 {
+  height: 2.6em;
+}
+img.h50 {
+  height: 2.9em;
+}
+img.h55 {
+  height: 3.2em;
+}
+img.h60 {
+  height: 3.5em;
+}
+img.h65 {
+  height: 3.8em;
+}
+img.h70 {
+  height: 4.1em;
+}
+img.h75 {
+  height: 4.4em;
+}
+img.h80 {
+  height: 4.7em;
+}
+img.h83 {
+  height: 4.9em;
+}
+img.h85 {
+  height: 5.0em;
+}
+img.h90 {
+  height: 5.3em;
+}
+img.h95 {
+  height: 5.6em;
+}
+img.h100 {
+  height: 5.9em;
+}
+img.h105 {
+  height: 6.2em;
+}
+img.h110 {
+  height: 6.5em;
+}
+img.h115 {
+  height: 6.8em;
+}
+img.h120 {
+  height: 7.1em;
+}
+img.h130 {
+  height: 7.7em;
+}
+img.h140 {
+  height: 8.3em;
+}
+img.h150 {
+  height: 8.9em;
+}
+img.h160 {
+  height: 9.5em;
+}
+img.h170 {
+  height: 10.1em;
+}
+img.h180 {
+  height: 10.7em;
+}
+img.h190 {
+  height: 11.3em;
+}
+img.h200 {
+  height: 11.9em;
+}
+img.h210 {
+  height: 12.5em;
+}
+img.h220 {
+  height: 14em;
+}
+img.h250 {
+  height: 15.5em;
+}
+img.h300 {
+  height: 18.5em;
+}
+img.h340 {
+  height: 20.9em;
+}
+img.h350 {
+  height: 21.5em;
+}
+img.h400 {
+  height: 24.5em;
+}
+img.h500 {
+  height: 30.5em;
+}
+img.h600 {
+  height: 42.5em;
+}
+
+.mt0 {
+  margin-top: 0.0em;
+}
+.mt5 {
+  margin-top: 0.5em;
+}
+.mt10 {
+  margin-top: 1.0em;
+}
+.mt15 {
+  margin-top: 1.5em;
+}
+.mt20 {
+  margin-top: 2.0em;
+}
+.mt25 {
+  margin-top: 2.5em;
+}
+.mt30 {
+  margin-top: 3.0em;
+}
+.mb0 {
+  margin-bottom: 0em;
+}
+.mb10 {
+  margin-bottom: 1.0em;
+}
+.mb15 {
+  margin-bottom: 1.5em;
+}
+.mb20 {
+  margin-bottom: 2.0em;
+}
+div.mb25 {
+  margin-bottom: 2.5em;
+}
+div.mb30 {
+  margin-bottom: 3.0em;
+}
+div.mb40 {
+  margin-bottom: 4.0em;
+}
+div.mb50 {
+  margin-bottom: 5.0em;
+}
+.notop {
+  margin-top: 0em;
+}
+.nobottom {
+  margin-bottom: 0em;
+}
+.notopnobottom {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+/****************************** new code ************************/
+div.code { 
+  font-size: 0.95em;
+  word-spacing: 0.20em; /*0.15em 0.13em*/
+/*width: 100%;*/
+  line-height: 1.2em;
+  margin: 0.5em 0.0em 0.5em 2.0em;
+  padding: 0.2em 0.5em 0.3em 0.5em; /*like problemdisplay*/
+  border: 0px solid black; /*scaffold dashed dotted*/
+  background: #ffffff;
+}
+div.natural { /*natural language code; add to div.code*/
+  word-spacing: 1.3px; /*like BODY*/
+  letter-spacing: 0.4px; /*like BODY*/
+  line-height: 1.3em; /*like normal text*/
+}
+div.code table {
+/*white-space: nowrap;*/ /*redundant??*/
+/*border-spacing: 0px 0px;*/ /*distance btw borders of adjacent cells*/
+  border-collapse: collapse;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.code td.head {
+  padding: 0.3em 0.3em 0.2em 0.5em;
+  white-space: nowrap;
+  vertical-align: middle; 
+  background: #ffffff; /*same as body*/
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.code td {
+  padding: 0.05em 0.3em 0.05em 0.5em;
+  white-space: nowrap;
+  vertical-align: bottom; 
+/*height: 0em;*/ /*no effect, I guess*/
+  background: #ffffff; /*same as body*/
+  border: 0px solid black; /*scaffold dotted dashed*/
+}
+div.hltcode { /*same as div.code, just with background*/
+  font-size: 0.95em;
+  word-spacing: 0.20em; /*0.15em 0.13em*/
+/* width: 100%;*/
+  line-height: 1.3em;
+  margin: 1.2em 0.0em 1.2em 2.0em;
+  padding: 0.3em 0.5em 0.4em 0.5em; /*like problemdisplay*/
+  border: 0px solid black; /*scaffold dashed dotted*/
+  background: #ffffd4;
+}
+div.hltcode table {
+/*width: 100%; redundant*/
+/*border-spacing: 1px 2px; distance btw borders of adjacent cells*/
+  border-collapse: collapse;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.hltcode td.head {
+  padding: 0.4em 0.3em 0.2em 0.5em;
+  background: #ffffd4;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.hltcode td {
+  vertical-align: bottom; 
+  padding: 0.05em 0.3em 0.05em 0.5em;
+  white-space: nowrap;
+  background: #ffffd4; /*like td.carrot, problemdisplay*/
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.hltcode td.darker {
+  padding: 0.1em 0.3em 0.1em 0.5em;
+  white-space: nowrap;
+  vertical-align: bottom;
+  background: #ffffc0; /*different yellow*/
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+p.trace {
+  margin-left: 2.5em;
+  font-size: 0.87em;
+  word-spacing: 0.3em;
+  white-space: pre-line;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+.ls {
+  letter-spacing: 3.5px;
+}
+div.exr div.code {
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+}
+div.exr div.code td {
+  font-size: 0.95em; /*more than small*/
+}
+div.exr div.code td.head {
+  font-size: 0.95em; /*more than small*/
+}
+div.codefragment {
+  margin-top: -0.5em;
+  margin-bottom: -0.5em;
+  margin-left: 2.5em;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.codefragment table {
+  width: 90%;
+  white-space: nowrap;
+  border-collapse: collapse;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+
+
+/**** equation ****/
+span.hlteqn { /* highlighted displayed equation */
+/*background: #ffffb8; yellow*/
+  background: #ffffd4; /*yellow like hltcode*/
+  padding: 2px 2px 2px 2px;
+  white-space: nowrap;
+}
+div.equation {
+  margin-top: 1.0em;
+  margin-bottom: 1.0em;
+  white-space: nowrap;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.equation table {
+  width: 100%;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.equation td.left {
+/*width: 10%;*/
+  width: 49%;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.equation td.center {
+/*width: 78%;*/
+  text-align: center;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.equation td.right {
+/*width: 10%;*/
+  width: 49%;
+  text-align: right;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+
+/**** eqnarray ****/
+div.eqnarray {
+  text-align: center;
+  line-height: 1.3em;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.eqnarray table {
+  margin-left: auto;
+  margin-right: auto;
+/*border-collapse: collapse;*/
+  border-spacing: 1px 5px; /*distance btw borders of adjacent cells*/
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.eqnarray td.left {
+  padding: 0.1em 0em 0.1em 0em;
+  text-align: right;
+  white-space: nowrap;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.eqnarray td.center {
+  padding: 0.1em 0.4em 0.1em 0.4em;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.eqnarray td.right {
+  padding: 0.1em 0em 0.1em 0em;
+  text-align: left;
+  white-space: nowrap;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+
+/****** two-prong definition ***************/
+div.two-prong-def { 
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+  margin-left: 2em;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.two-prong-def table {
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.two-prong-def td.left { /*used with rowspan=2*/
+  white-space: nowrap;
+  text-align: right;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.two-prong-def td.center { /*used with rowspan=2*/
+  white-space: nowrap;
+  padding-left: 6px;
+  padding-right: 7px;
+  text-align: center;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.two-prong-def td.right {
+  white-space: nowrap;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  text-align: left;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.two-prong-def td.hsp {
+  padding-left: 1em;
+}
+div.two-prong-def td.farright {
+  white-space: nowrap;
+  text-align: left;
+}
+
+/**** displayed two-dimensional equations ****/
+div.two-dim-eq {
+  margin-top: 1.1em;
+  margin-bottom: 1.1em;
+  text-align: center;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.two-dim-eq-00 { 
+  text-align: center;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+div.two-dim-eq table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.numerator {
+  border-bottom: 1px solid black; /*no scaffold!*/
+  text-align: center;
+  padding: 0px 0px 0px 0px;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+td.denominator {
+  text-align: center;
+  padding: 0px 0px 0px 0px;
+  vertical-align: top;
+  white-space: nowrap;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.mid {
+  text-align: center;
+  vertical-align: middle; /*default*/
+  white-space: nowrap;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.numerator-hlt {
+  border-bottom: 1px solid black; /*no scaffold!*/
+  text-align: center;
+  padding: 2px;
+  background: #ffffd4; /*yellow like hltcode*/
+  white-space: nowrap;
+}
+td.denominator-hlt {
+  text-align: center;
+  padding: 2px;
+/*font-size: .90rem;*/ /*rem*/
+  background: #ffffd4; /*yellow like hltcode*/
+  white-space: nowrap;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.mid-hlt {
+  text-align: center;
+  vertical-align: middle; /*default*/
+  padding: 2px;
+  background: #ffffd4; /*yellow like hltcode*/
+  white-space: nowrap;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+
+/**** inline two-dimensional equations *** does not work*/
+div.inlinee {
+  display: inline-table;
+}
+table.inline-two-dim-eq {
+  border-collapse: collapse;
+  display: inline-table;
+  font-size: 80%;
+  border: 1px solid black; /*scaffold dashed dotted*/
+}
+table.inline-two-dim-eq tr {
+/*display: inline;*/
+/*display: table-row-group;*/
+/*display: table-column-group;*/
+  display: table-row;
+  border: 1px solid black; /*scaffold dashed dotted*/
+}
+table.inline-two-dim-eq td.numerator {
+  border-bottom: 1px solid black;
+  padding: 0px 0px 0px 0px;
+  text-align: center;
+  white-space: nowrap;
+/*vertical-align: bottom;*/
+  display: table-cell;
+}
+table.inline-two-dim-eq td.denominator {
+  padding: 0px 0px 0px 0px;
+  text-align: center;
+/*vertical-align: top;*/
+  white-space: nowrap;
+  display: table-cell;
+  border: 1px solid black; /*scaffold dashed dotted*/
+}
+table.inline-two-dim-eq td.mid {
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/***** container ******/
+table.container {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.container-top {
+  padding: 0em;
+  vertical-align: top;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.container-middle {
+  padding: 0em;
+  vertical-align: middle;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.container-bottom {
+  padding: 0em;
+  vertical-align: bottom;
+  text-align: center;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+/***** binary tree ******/
+table.tree { /*each cell is a node or a link*/
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  margin-top:0em;
+  margin-bottom:0em;
+  padding:0em 0em 0em 0em;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+table.tree td.node {
+  margin:0em 0em 0em 0em;
+  padding:0em 0em 0em 0em;
+  text-align: center;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+table.tree td.link {
+  margin:0em 0em 0em 0em;
+  padding:0em 0em 0em 0em;
+  text-align: center;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+.nw {
+  white-space: nowrap;
+}
+/*span.slanted { does not work
+  font-style: oblique; 
+}*/
+span.bold {
+  font-weight: bold; 
+}
+span.u {
+  text-decoration: underline; 
+}
+span.sc {
+  font-variant: small-caps; 
+/*text-transform: uppercase;*/ 
+}
+span.scul {
+  font-variant: small-caps; 
+  text-decoration: underline;
+}
+span.bar {
+  text-decoration: overline;
+}
+span.rm {
+  font-style: normal;
+}
+span.invis {
+  visibility: hidden;
+}
+span.visib {
+}
+
+ul.tight {
+  margin-top: -0.5em;
+  margin-bottom: -0.5em;
+}
+ul.inline {
+  display: inline;
+}
+ul.inline li {
+  display: inline;
+}
+blockquote.invariant {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 3em;
+  margin-right: 3em;
+  vertical-align: middle;
+}
+li.invariant {
+  margin-top: 0.2em;
+}
+li.sp {
+  margin-top: 0.3em;
+}
+li.ssp {
+  margin-top: 0.5em;
+}
+li.sssp {
+  margin-top: 1.0em;
+}
+.hint {
+  float: left;  margin: 0.5em 0.5em 0.5em -2.5em;
+  float: right; margin: 0.5em -2.5em 0.5em 0.5em;
+  display: block; 
+  width: 18%;
+  background: #e8e8e8; 
+  border-left: 0px solid black; 
+  border-top: 0px solid black;
+  color: black; 
+  padding: 0.5em;
+  text-align: right;
+  font-size: 0.87em;    
+}
+.floatright {
+  float: right;
+  display: block; /*????????????????????*/
+}
+div.clear {
+  clear: both;
+}
+span.monosp {
+  font-family: monospace, monospace;
+}
+span.monospinvis {
+  font-family: monospace, monospace;
+  visibility: hidden;
+}
+
+ol.tight {
+  margin-top: -0.5em;
+  margin-bottom: -0.5em;
+}
+ol.iii {
+  list-style-type: lower-roman;
+}
+ol.abc {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  list-style-type: lower-latin;
+}
+ul.nolabel {
+  list-style-type: none;
+}
+ul.gdisc {
+  list-style-type: disc;
+}
+ul.square {
+  list-style-type: square;
+}
+li p {
+  margin-top: 0.7em;
+  margin-bottom: 1em;
+}
+div.box {
+  margin: 3em 0em 4em 0em;
+  padding: 0.1em 1em 0.5em 1em;
+  background: #e8e8ff;
+  font-size: 1.1rem; /*like div.exr*/
+}
+div.box div.code {
+  background: #e8e8ff; /*same as box*/
+}
+div.box div.code td {
+  background: #e8e8ff; /*same as box*/
+}
+div.box div.code td.head {
+  background: #e8e8ff; /*same as box*/
+}
+div.example {
+  margin: 3em 0em 3em 2em;
+  font-size: 0.92em; /* > exr*/
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+p.noindent-example {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+/******************* heap ********************/
+td.heap-nocell {
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.heap-dummy { /*for spacing*/
+  margin: 0px 0px 0px 0px;
+  padding: 0px 1px 0px 1px;
+  width: 9px;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.heapcell {
+  margin: 0px 0px 0px 0px;
+  padding: 1px 1px 1px 1px;
+  text-align: center;
+  background-color: #c0c0c0;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.heap-lastcolumn {
+  margin: 0px 0px 0px 0px;
+  border: 0px solid black;
+  padding: 1px 1px 1px 1px;
+  width: 50px;
+  text-align: right;
+}
+
+/**** tables ****/
+table.border-sp-1 {
+  border-spacing: 1px 1px; /*distance btw borders of adjacent cells*/
+  border: 0px solid black; /*scaffold dashed dotted*/
+/*font-size: 0.90em;*/
+}
+table.auto-border-sp-1 {
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 1px 1px; /*distance btw borders of adjacent cells*/
+/*font-size: 0.90em;*/
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+table.center-collapse {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+table.left-collapse {
+  margin-left: 2.5em;
+  border-collapse: collapse;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+table.vbars {
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 5px 1px;
+}
+table.vbars td {
+  width: 5px;
+  height: 10px;
+}
+
+/**** td's ****/
+td.rowname-center {
+  width: 3.2em;
+  text-align: center;
+  white-space: nowrap;
+/*font-size: 0.90em; like function*/
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.rowname-right {
+  width: 3.2em;
+  text-align: right;
+  white-space: nowrap;
+/*font-size: 0.90em; like function*/
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.bgray-matrix {
+  width: 1.2em;
+  padding: 0em 0em 0em 0em;
+  text-align: center;
+/*background-color: #d8d8e0;*/
+/*background-color: #ededf0;*/
+  background-color: #f4f4ff;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.array {
+  width: 1.6em; /*was 1.7em 2.2em*/
+  padding: 0.1em 0em 0.1em 0em;
+  padding: 0.0em 0.2em 0.0em 0.2em;
+  text-align: center;
+  white-space: nowrap;
+}
+td.function {
+  width: 1.8em;
+  padding: 0em 0em 0em 0em;
+  text-align: right;
+  white-space: nowrap;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.function-narrow {
+  width: 1.4em;
+  padding: 0em 0em 0em 0em;
+  text-align: right;
+  white-space: nowrap;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.wide-center {
+  width: 2.1em; /* was 2.2em */
+  padding: 0em 0em 0em 0em;
+  text-align: center;
+}
+td.narrow-center {
+  width: 1.8em;
+  padding: 0em 0em 0em 0em;
+  text-align: center;
+}
+td.wwide-right {
+  width: 2.5em;
+  padding: 0em 0em 0em 0em;
+  text-align: right;
+  white-space: nowrap;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.center-tight {
+  text-align: center;
+  margin: 0em;
+  padding: 0em;
+}
+td.xcenterx {
+  text-align: center;
+  padding: 0em 0.2em 0em 0.2em;
+}
+td.xxcenterxx {
+  text-align: center;
+  padding: 0em 0.4em 0em 0.4em;
+}
+td.xxxcenterxxx {
+  text-align: center;
+  padding: 0em 0.5em 0em 0.5em;
+}
+td.left-bx {
+  text-align: left;
+  padding: 0em 0.0em 0.4em 0em;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.leftx {
+  text-align: left;
+  padding: 0em 0.5em 0em 0em;
+}
+td.leftxx {
+  text-align: left;
+  padding: 0.0em 1em 0.0em 0em;
+}
+td.xxleft {
+  text-align: left;
+  padding: 0.0em 0em 0.0em 2em;
+  white-space: nowrap;
+/*background-color: #d4d4e0; blue-gray*/
+}
+td.iright {
+  text-align: right;
+  padding: 0.0em 0em 0em 0.5em;
+  white-space: nowrap;
+}
+td.xright {
+  text-align: right;
+  padding: 0.0em 0em 0em 0.8em;
+  white-space: nowrap;
+}
+td.xxright {
+  text-align: right;
+  padding: 0.0em 0em 0em 1em;
+/*font-size: 93%; more than small*/
+}
+td.rightxx {
+  text-align: right;
+  padding: 0.0em 1em 0em 0em;
+  white-space: nowrap;
+}
+td.rightx {
+  text-align: right;
+  padding: 0.0em 0.5em 0em 0em;
+  white-space: nowrap;
+}
+td.hspacer {
+  width: 2em;
+  padding: 0em;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.hhspacer {
+  width: 2em;
+  padding: 0em;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.hhhspacer {
+  width: 4em;
+  padding: 0em;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.vspacer {
+  height: 1em;
+  border: 0px solid black; /*scaffold dashed dotted*/
+}
+td.caption-magenta {
+  text-align: center;
+  font-size: 87%;
+  color:  #802020;
+}
+td.caption-green {
+  text-align: center;
+  font-size: 87%;
+  color:  #105050;
+}
+td.adj-list {
+  text-align: left;
+  padding: 0.0em 0em 0.0em 0em;
+  background-color: #a0b0ff; /*nice blue*/
+  background-color: #f0f0b8; /*+-hlt*/
+  background-color: #f0d0a8; /*carrot*/
+  background-color: #ffddc8; /*light carrot*/
+  background-color: #ffffff;
+}
+
+/**** background/text colors ****/
+td.lightgray {
+  background-color: #e8e8f0;
+}
+td.bgray {
+  background-color: #e8e8f8; /*bluish gray*/
+}
+td.gray {
+  background-color: #c0c0c0;
+  background-color: #d0d0d0;
+}
+td.medgray {
+  background-color: #b0b0b0;
+  background-color: #c0c0c0;
+}
+td.darkgray {
+  background-color: #a0a0a0;
+  background-color: #b0b0b0;
+}
+td.lred {
+  background-color: #f0a0a0;
+}
+td.carrot {
+  background-color: #ffddc8; /*too rosy*/
+  background-color: #552800; /*yoshi brown (too dark)*/
+  background-color: #ffffd4; /*yellow like hltcode (too light)*/
+  background-color: #ffdab9; /*peachpuff: too pink on notebook*/
+  background-color: #ffefd5; /*papayawhip: good*/ 
+  background-color: #d2b48c; /*tan: nice chocolat*/
+  background-color: #deb887; /*burlywood: orange+chocolate*/
+  background-color: #ffe4ff; /*carrot*/
+}
+td.magenta {
+  background-color: #e080e0; /*real magenta*/
+  background-color: #e0a0e0;
+  background-color: #f09090; /*red brick*/
+  background-color: #ffd0c0;
+}
+td.green {
+  background-color: #a0e0e0;
+  background-color: #c0f0f0;
+}
+td.blue {
+  background-color: #9090f0;
+  background-color: #d0d0ff;
+}
+td.black {
+  background-color: #020202;
+  background-color: #505050;
+}
+td.white {
+  background-color: #ffffff;
+}
+td.dottedwhite {
+  border: 1px dotted silver;
+  border: 1px dotted gray;
+}
+.red {
+  color: red;
+/*font-weight: bold;*/
+}
+span.black {
+  color: #000030; /*as in BODY*/
+}
+.blood {
+  color: #c00000;
+}
+span.highlight {
+/*color: #ff6633;*/ /*orange*/
+/*color: #d04010;*/ /*brown-orange*/
+  color: #b04010; /*dark brown-orange*/
+  color: #b00000; /* like blood */
+}
+span.blue {
+  color: #4000ff;
+}
+span.green {
+  color: #00a000;
+}
+span.white {
+  color: white;
+/*font-weight: bold;*/
+}
+
+div.solu {
+  white-space: pre-wrap;
+  white-space: pre;/* will not wrap */
+  font-family: "Courier";
+  font-family: "mono";/* font-size: 0.70em;*/
+  font-family: "Comic Sans MS";
+  font-size: 0.85em;
+  color: #0000a0;
+  margin: 1em 0em 2em 2em;
+}
+div.footer {
+  margin-top: 3.5em;
+  margin-bottom: 30em;
+  font-size: 0.83em;
+}
+div.footer p {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+div.footer ul {
+  margin-top: 2px;
+  margin-bottom: 1px;
+}
+div.footer li {
+  margin-top: 1px;
+}
+div.footer p.validator {
+  margin-top: 0em;
+  text-align: right;
+}
+div.footer img.tidy { 
+  border: 0px solid blue; /*scaffold dashed dotted*/
+/*height: 16px;*/
+/*width:  39px;*/
+  height: 0.86em;
+  width:  2.10em;
+  padding-left: 5px;
+/*float: right;*/
+}
+div.footer img.w3 { 
+  border: 0px solid blue; /*scaffold dashed dotted*/
+/*height: 31px;*/
+/*width:  88px;*/
+/*height: 25px;*/
+/*width:  63px;*/
+  height: 1.37em;
+  width:  3.69em;
+  padding-left: 5px;
+/*float: right;*/
+}
+div.footer img.r { 
+  border: 0;
+  width:  88px;
+  /*height: 31px;*/
+  width:  70px;
+  padding-left: 5px;
+/*float: right;*/
+}
+
+div.dictionary-page {
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 0.95em;
+}
+div.dictionary-page dt {
+  margin-top: 0.8em;
+/*font-style: italic;*/
+/*font-weight: bold;*/
+  color: #b00000;
+}
+div.dictionary-page dd {
+  margin-top: 0.3em;
+  margin-left: 2.0em;
+}
+
+div.beyondend { /*after /html*/
+  background-color: #e8e8e8;
+  margin-top: -10em;
+}
+
+/******************************************************************************/
+/**** uncomment before lecture ************************************************
+BODY {
+  margin-left: 2%;
+  margin-right: 17%;
+  word-spacing: 1.6px;
+  letter-spacing: 0.6px;
+  font-size: 150%;
+}
+.hide { 
+  display: none;
+}
+p.menu {
+   font-size: 0.6em;
+}
+h1 {
+   font-size: 2.2em;
+   margin-top: 4em;
+   margin-bottom: 5em;
+}
+h2 {
+   font-size: 2.0em;
+   margin-top: 8em;
+   color: #c04010;
+}
+h3 {
+   margin-top: 6em;
+   color: #c04010; 
+}
+p.epigraph {
+  dispay: none;
+}
+p.epigraphsignature {
+  dispay: none;
+}
+p {
+  margin-top: 4em;
+  margin-bottom: 4em;
+  line-height: 140%;
+}
+li {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  line-height: 120%;
+}
+tt {
+  font-weight: normal;
+}
+pre {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  font-weight: normal;
+}
+p.inlineH3 {
+  margin-top: 6em;
+}
+div.example tr {
+  height: 3em;
+}
+div.code {
+ line-height: 1.3em;
+}
+div.hltcode {
+ line-height: 1.3em;
+}
+div.eqnarray {
+  line-height: 1.7em;
+}
+div.eqnarray table {
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 1px 10px;
+}
+div.exr {
+  display: normal;
+}
+.hh { 
+  display: normal, normal;
+}
+div.footer {
+  margin-top: 50em;
+  margin-bottom: 10em;
+  display: normal;
+}
+div.footer p {
+  margin-top: 0em;
+  font-size: 0.60em;
+  display: normal;
+}
+div.footer p.validator {
+  margin-top: 0em;
+  display: normal;
+}
+img.h40 { 
+  height: 60px;
+}
+img.h45 { 
+  height: 65px;
+}
+img.h50 { 
+  height: 70px;
+}
+img.h55 { 
+  height: 75px;
+}
+img.h60 { 
+  height: 80px;
+}
+img.h65 { 
+  height: 85px;
+}
+img.h70 { 
+  height: 90px;
+}
+img.h75 { 
+  height: 100px;
+}
+img.h80 { 
+  height: 110px;
+}
+img.h83 { 
+  height: 115px;
+}
+img.h85 { 
+  height: 120px;
+}
+img.h90 { 
+  height: 130px;
+}
+img.h95 { 
+  height: 140px;
+}
+img.h100 { 
+  height: 150px;
+}
+img.h105 { 
+  height: 155px;
+}
+img.h110 { 
+  height: 160px;
+}
+img.h115 { 
+  height: 165px;
+}
+img.h120 { 
+  height: 170px;
+}
+img.h130 { 
+  height: 180px;
+}
+img.h140 { 
+  height: 190px;
+}
+img.h150 { 
+  height: 200px;
+}
+img.h160 { 
+  height: 220px;
+}
+img.h170 { 
+  height: 230px;
+}
+img.h180 { 
+  height: 240px;
+}
+img.h190 { 
+  height: 250px;
+}
+img.h200 { 
+  height: 260px;
+}
+img.h210 { 
+  height: 270px;
+}
+img.h250 { 
+  height: 300px;
+}
+img.h300 { 
+  height: 370px;
+}
+img.h340 { 
+  height: 490px;
+}
+img.h350 { 
+  height: 500px;
+}
+img.h400 { 
+  height: 560px;
+}
+img.h500 { 
+  height: 800px;
+}
+img.h600 {
+  height: 42.5em;
+}
+div.beyondend {
+  margin-top: 5em;
+  display: none;
+}
+
+******* end lectures *********************************************************/
+
+
+
+

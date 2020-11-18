@@ -1,0 +1,15 @@
+/* ANALISEdeALGS/analise_de_algoritmos/aulas/solucoes/style-solucoes.css */
+/* to be loaded after aulas/style-aulas.css */
+body {
+  background-color: #e0ffff;
+  font-size: 1.0em;
+}
+div.code {
+  background-color: #e0ffff; /*as in body*/
+}
+div.code td {
+  background-color: #e0ffff; /*as in body*/
+}
+div.code td.head {
+  background-color: #e0ffff; /*as in body*/
+}

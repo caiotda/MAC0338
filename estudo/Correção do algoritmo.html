@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<title>Correção do algoritmo</title>
+<meta name="Author" content="Paulo Feofiloff">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Corre%C3%A7%C3%A3o%20do%20algoritmo_arquivos/style-aulas.css" type="text/css">
+<link rel="stylesheet" href="Corre%C3%A7%C3%A3o%20do%20algoritmo_arquivos/style-solucoes.css" type="text/css">
+<link rel="stylesheet" media="(max-width:800px)" href="Corre%C3%A7%C3%A3o%20do%20algoritmo_arquivos/style-solucoes-mobile.css" type="text/css">
+<link rel="stylesheet" media="print" href="Corre%C3%A7%C3%A3o%20do%20algoritmo_arquivos/style-solucoes-print.css" type="text/css">
+</head>
+<body>
+
+
+
+
+<p class="menu">
+<a href="https://www.ime.usp.br/~pf/analise_de_algoritmos/index.html">Análise de Algoritmos</a>&nbsp;| 
+<a href="https://www.ime.usp.br/~pf/analise_de_algoritmos/lectures.html">Aulas</a>&nbsp;| 
+
+
+<a href="https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/dictionary.html">Dicionário</a>&nbsp;|
+<a href="https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/indice.html">Índice</a>
+
+
+
+
+
+
+
+
+
+
+</p><h2>Prova da correção do algoritmo da mochila fracionária</h2>
+
+<p>[<a href="https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/mochila-frac.html#exr:prog-lin">Enunciado</a>]&nbsp;&nbsp;
+Considere uma instância <span class="nw">( <var>p</var>, <var>v</var>, <var>n</var>, <var>c</var>)d</span>
+do problema da mochila fracionária.
+Suponha que os objetos estão em <a href="https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/mochila-frac.html#valor-especifico">ordem crescente de valor específico</a>.
+Queremos provar que a mochila fracionária produzida pelo algoritmo 
+<a href="https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/mochila-frac.html#Mochila-Fracionaria"><span class="sc">Mochila-Fracionária</span></a> 
+tem valor máximo.
+
+
+</p><h3>Prova</h3>
+
+<p>A prova é inspirada em dualidade de programação linear.
+Diremos que um <q>vetor primal</q> é 
+qualquer vetor racional <span class="nw"><var>x</var>[1 .. <var>n</var>]</span>.
+Diremos que um vetor primal <span class="nw"><var>x</var>[1 .. <var>n</var>]</span> é viável
+se <span class="nw"><var>x</var> · <var>p</var> ≤ <var>c</var></span>
+e <span class="nw">0 ≤ <var>x</var>[<var>i</var>] ≤ 1</span> 
+para todo <var>i</var>.
+ 
+</p><p>Diremos que um <q>vetor dual</q> é qualquer vetor racional <span class="nw"><var>y</var>[0 .. <var>n</var>]</span>
+e diremos que um vetor dual <span class="nw"><var>y</var>[0 .. <var>n</var>]</span> é viável se
+<var>y</var>[<var>i</var>]&nbsp;≥&nbsp;0 para todo&nbsp;<var>i</var> 
+e <span class="nw"><var>y</var>[<var>i</var>] + <var>y</var>[0] <var>p</var>[<var>i</var>] ≥</span> 
+<var>v</var>[<var>i</var>] para todo 
+<var>i</var>&nbsp;≥&nbsp;1.
+
+</p><p class="indent">Lema:
+Para qualquer vetor primal viável <var>x</var>
+e qualquer vetor dual viável&nbsp;<var>y</var>,
+vale a desigualdade <span class="nw"><var>x</var> · <var>v</var> ≤ <var>y</var>[0] <var>c</var> + ∑ <sub>1 ≤ <var>i</var> ≤ <var>n</var></sub> <var>y</var>[<var>i</var>]</span>.
+
+</p><p class="indent">Para provar o lema basta verificar a sequinte sequência de 
+igualdades e desigualdades:
+
+</p><div class="eqnarray small95">
+<table>
+<tbody><tr>
+<td class="left">
+<var>x</var> · <var>v</var> 
+</td><td class="center">
+=
+</td><td class="right">
+∑ <var>x</var>[<var>i</var>]<var>v</var>[<var>i</var>]
+
+</td></tr><tr>
+<td class="left">
+&nbsp;
+</td><td class="center">
+≤
+</td><td class="right">
+∑ <var>x</var>[<var>i</var>](<var>y</var>[<var>i</var>] + <var>y</var>[0] <var>p</var>[<var>i</var>])
+
+</td></tr><tr>
+<td class="left">
+&nbsp;
+</td><td class="center">
+=
+</td><td class="right">
+<var>y</var>[0] ∑ <var>x</var>[<var>i</var>]<var>p</var>[<var>i</var>] + ∑ <var>x</var>[<var>i</var>]<var>y</var>[<var>i</var>]
+
+</td></tr><tr>
+<td class="left">
+&nbsp;
+</td><td class="center">
+≤ 
+</td><td class="right">
+<var>y</var>[0] <var>c</var> + ∑ <var>x</var>[<var>i</var>]<var>y</var>[<var>i</var>]
+
+</td></tr><tr>
+<td class="left">
+&nbsp;
+</td><td class="center">
+≤
+</td><td class="right">
+<var>y</var>[0] <var>c</var> + ∑ <var>y</var>[<var>i</var>].
+
+</td></tr></tbody></table>
+</div>
+
+
+<p>Segue do lema que se <var>x</var> é primal viável
+e existe um vetor dual viável <var>y</var> tal que e <span class="nw"><var>x</var> · <var>v</var> =</span> <span class="nw"><var>y</var>[0] <var>c</var> 
+ + ∑ <var>y</var>[<var>i</var>]</span>
+então <var>x</var> maximiza <span class="nw"><var>x</var> · <var>v</var></span>.
+Essa observação será explorada a seguir para mostrar que 
+o vetor <var>x</var> calculado pelo algoritmo 
+<a href="https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/mochila-frac.html#Mochila-Fracionaria"><span class="sc">Mochila-Fracionária</span></a> 
+maximiza <span class="nw"><var>x</var> · <var>v</var></span>.
+Vamos tratar em separado de dois casos,
+conforme o valor da soma dos pesos:
+
+
+</p><p>CASO 1:&nbsp;
+∑ <var>p</var>[<var>i</var>] ≤ <var>c</var>.&nbsp;
+Nesse caso,
+o algoritmo devolve um vetor <var>x</var> tal que 
+<var>x</var>[<var>i</var>]&nbsp;=&nbsp;1 para todo&nbsp;<var>i</var>.
+É&nbsp;claro que <var>x</var> é viável.
+Agora considere o vetor dual <var>y</var> definido assim:
+<var>y</var>[0]&nbsp;=&nbsp;0 
+e <var>y</var>[<var>i</var>]&nbsp;=&nbsp;<var>v</var>[<var>i</var>] 
+para todo <var>i</var>&nbsp;≥&nbsp;1.
+É&nbsp;claro que <var>y</var> é viável.
+Como <span class="nw"><var>x</var> · <var>v</var></span> 
+= ∑ <var>v</var>[<var>i</var>]
+= <var>y</var>[0] <var>c</var> + ∑ <var>y</var>[<var>i</var>],
+o Lema acima garante que <var>x</var> maximiza&nbsp;<span class="nw"><var>x</var> · <var>v</var></span>.
+
+
+</p><p>CASO 2:&nbsp;
+∑ <var>p</var>[<var>i</var>] &gt; <var>c</var>.&nbsp;
+Seja <var>k</var> o menor índice tal <span class="nw">∑ <sub><var>k</var> &lt; <var>m</var> ≤ <var>n</var></sub> <var>p</var>[<var>m</var>] ≤ <var>c</var></span>.
+O algoritmo devolve um vetor primal <var>x</var> tal que 
+<var>x</var>[<var>i</var>]&nbsp;=&nbsp;0 
+para todo <var>i</var> em <span class="nw">1 .. <var>k</var>−1</span>,
+<var>x</var>[<var>k</var>]&nbsp;= <span class="nw">(<var>c</var> − ∑ <sub><var>k</var> &lt; <var>m</var> ≤ <var>n</var></sub> <var>p</var>[<var>m</var>]) / <var>p</var>[<var>k</var>]</span>, e
+<var>x</var>[<var>m</var>]&nbsp;=&nbsp;1 
+para todo <var>m</var> em <span class="nw"><var>k</var>+1 .. <var>n</var></span>.
+É&nbsp;fácil constatar que <var>x</var> é viável.
+Resta mostrar que <var>x</var> maximiza&nbsp;<span class="nw"><var>x</var> · <var>v</var></span>.
+
+</p><p>Seja <var>y</var> o vetor dual definido assim:
+</p><ul>
+<li>
+<span class="nw"><var>y</var>[0] = <var>v</var>[<var>k</var>] / <var>p</var>[<var>k</var>]</span>,
+</li><li>
+<span class="nw"><var>y</var>[<var>i</var>] = 0</span> 
+para todo <var>i</var> em <span class="nw">1 .. <var>k</var>−1</span> 
+e 
+</li><li>
+<span class="nw"><var>y</var>[<var>m</var>] = <var>v</var>[<var>m</var>] − <var>p</var>[<var>m</var>] <var>y</var>[0]</span>
+para todo <var>m</var> em <span class="nw"><var>k</var> .. <var>n</var></span>.
+</li></ul>
+
+<p>
+Para mostrar que <var>y</var> é viável,
+basta verificar que  
+<var>y</var>[<var>m</var>]&nbsp;≥&nbsp;0 
+para todo <var>m</var> em <span class="nw"><var>k</var> .. <var>n</var></span>.
+Faremos isso a seguir.
+Por hipótese, <span class="nw"><var>v</var>[<var>k</var>] / <var>p</var>[<var>k</var>] ≤</span>
+<span class="nw"><var>v</var>[<var>m</var>] / <var>p</var>[<var>m</var>]</span>
+para todo <var>m</var> em <span class="nw"><var>k</var> .. <var>n</var></span>.
+Logo, para todo <var>m</var> em <span class="nw"><var>k</var> .. <var>n</var></span> temos <span class="nw"><var>p</var>[<var>m</var>] <var>y</var>[0] =</span> 
+<span class="nw"><var>p</var>[<var>m</var>]<var>v</var>[<var>k</var>]/<var>p</var>[<var>k</var>] ≤</span> 
+<span class="nw"><var>p</var>[<var>m</var>]<var>v</var>[<var>m</var>]/<var>p</var>[<var>m</var>] = <var>v</var>[<var>m</var>]</span>.
+Logo, <span class="nw"><var>v</var>[<var>m</var>] − <var>p</var>[<var>m</var>]<var>y</var>[0] ≥ 0</span>
+e portanto <var>y</var>[<var>m</var>]&nbsp;≥&nbsp;0
+para todo <var>m</var> em&nbsp;<span class="nw"><var>k</var> .. <var>n</var></span>.
+Assim, <var>y</var> é viável.
+
+</p><p>Finalmente, observe que  
+
+
+</p><div class="eqnarray small95">
+<table>
+<tbody><tr>
+<td class="left">
+<var>x</var> · <var>v</var> 
+</td><td class="center">
+=
+</td><td class="right">
+∑ <var>x</var>[<var>i</var>]<var>v</var>[<var>i</var>]
+
+</td></tr><tr>
+<td class="left">
+&nbsp;
+</td><td class="center">
+=
+</td><td class="right">
+<var>x</var>[<var>k</var>]<var>v</var>[<var>k</var>] + ∑ <sub><var>k</var> &lt; <var>m</var> ≤ <var>n</var></sub> <var>v</var>[<var>m</var>] 
+
+</td></tr><tr>
+<td class="left">
+&nbsp;
+</td><td class="center">
+=
+</td><td class="right">
+(<var>c</var> − ∑ <sub><var>k</var> &lt; <var>m</var> ≤ <var>n</var></sub> <var>p</var>[<var>m</var>])<var>v</var>[<var>k</var>]/<var>p</var>[<var>k</var>]
+  + ∑ <sub><var>k</var> &lt; <var>m</var> ≤ <var>n</var></sub> <var>v</var>[<var>m</var>] 
+
+</td></tr><tr>
+<td class="left">
+&nbsp;
+</td><td class="center">
+=
+</td><td class="right">
+c <var>y</var>[0]  − (∑ <sub><var>k</var> &lt; <var>m</var> ≤ <var>n</var></sub> <var>p</var>[<var>m</var>])<var> y</var>[0]
+  + ∑ <sub><var>k</var> &lt; <var>m</var> ≤ <var>n</var></sub> <var>v</var>[<var>m</var>] 
+
+</td></tr><tr>
+<td class="left">
+&nbsp;
+</td><td class="center">
+=
+</td><td class="right">
+<var>y</var>[0] <var>c</var> + ∑ <sub><var>k</var> &lt; <var>m</var> ≤ <var>n</var></sub> (<var>v</var>[<var>m</var>] − <var>y</var>[0] <var>p</var>[<var>m</var>])
+
+</td></tr><tr>
+<td class="left">
+&nbsp;
+</td><td class="center">
+=
+</td><td class="right">
+<var>y</var>[0] <var>c</var> + ∑ <sub><var>k</var> &lt; <var>m</var> ≤ <var>n</var></sub>  <var>y</var>[<var>m</var>]
+
+</td></tr><tr>
+<td class="left">
+&nbsp;
+</td><td class="center">
+=
+</td><td class="right">
+<var>y</var>[0] <var>c</var> + ∑ <sub>1 ≤ <var>i</var> ≤ <var>n</var></sub> <var>y</var>[<var>i</var>].
+
+</td></tr></tbody></table>
+</div>
+
+
+
+
+<p>A última linha segue da observação de que 
+<var>y</var>[<var>i</var>] = 0 para todo <var>i</var> em <span class="nw">1 .. <var>k</var>−1</span> 
+e <var>y</var>[<var>k</var>]&nbsp;=&nbsp;0.
+Portanto,
+de acordo com o Lema acima, <var>x</var> maximiza&nbsp;<span class="nw"><var>x</var> · <var>v</var></span>.
+
+
+
+
+
+</p><div class="footer">
+<hr>
+<p class="nw">
+www.ime.usp.br/~pf/analise_de_algoritmos/<br>
+Atualizado em 2020-11-10<br>
+<em>Paulo Feofiloff</em><br>
+<a href="https://www.ime.usp.br/dcc/">DCC</a>-IME-USP
+
+
+
+
+</p></div>
+
+
+
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="Corre%C3%A7%C3%A3o%20do%20algoritmo_arquivos/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10891381-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+</body></html>
